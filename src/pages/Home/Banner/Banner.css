@@ -1,0 +1,13 @@
+.riad{
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+    
+
+}
+.image-container{
+    max-height: 75vh;
+    min-height: 70vh ;
+    width: auto;
+
+}
