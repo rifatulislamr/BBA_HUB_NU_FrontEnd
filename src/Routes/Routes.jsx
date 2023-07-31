@@ -8,6 +8,10 @@ import Service from "../pages/Service/Service/Service";
 import About from "../pages/About/About";
 import Login from "../pages/Login/Login";
 import SignUp from "../pages/SignUp/SignUp";
+import PrivateRoute from "./PrivateRoute";
+import Secret from "../pages/Shared/Secret/Secret";
+import UserHome from "../pages/Dashboard/UserHome/UserHome";
+import Dashboard from "../Layout/Dashboard";
 
 
 
@@ -41,8 +45,22 @@ import SignUp from "../pages/SignUp/SignUp";
         {
           path: 'signUp',
           element: <SignUp></SignUp>
+        },
+        {
+          path: 'secret',
+          element: <PrivateRoute><Secret></Secret></PrivateRoute>
         }
 
       ]
     },
+    {
+      path:'dashboard',
+      element:<Dashboard></Dashboard>,
+      children:[
+        {
+          path:'userHome',
+          element:<UserHome></UserHome>
+        }
+      ]
+    }
   ]);
