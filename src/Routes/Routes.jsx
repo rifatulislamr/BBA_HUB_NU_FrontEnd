@@ -12,6 +12,7 @@ import PrivateRoute from "./PrivateRoute";
 import Secret from "../pages/Shared/Secret/Secret";
 import UserHome from "../pages/Dashboard/UserHome/UserHome";
 import Dashboard from "../Layout/Dashboard";
+import AllUsers from "../pages/Dashboard/UserHome/Admin/AllUsers";
 
 
 
@@ -60,6 +61,10 @@ import Dashboard from "../Layout/Dashboard";
         {
           path:'userHome',
           element:<UserHome></UserHome>
+        },
+        {
+          path:'allUsers',
+          element:<AllUsers></AllUsers>
         }
       ]
     }

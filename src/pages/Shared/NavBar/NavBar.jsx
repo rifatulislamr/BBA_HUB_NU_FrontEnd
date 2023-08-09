@@ -1,40 +1,59 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
+import { FaUser } from "react-icons/fa6";
 
 const NavBar = () => {
 
-    const {user,logOut} = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
 
-    const handleLogOut = () =>{
-         logOut()
-         .then(() =>{})
-         .catch(error => console.log(error));
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.log(error));
     }
- 
-    const navOptions = 
-    <>
-  
-        <li className="font-bold"><Link to="/">HOME</Link></li>
-        <li className="font-bold"><Link to="/service">SERVICES</Link></li>
-        <li className="font-bold"><Link to="/course">COURSES</Link></li>
-        <li className="font-bold"><Link to='/about'>ABOUT US</Link></li>
-        <li className="font-bold uppercase"><Link to='/secret'>secret</Link></li>
-        <li className="font-bold uppercase"><Link to='/dashboard/userHome'>User home</Link></li>
 
-        
-        {
+    const navOptions =
+        <>
+
+            <li className="font-bold"><Link to="/">HOME</Link></li>
+            <li className="font-bold"><Link to="/service">SERVICES</Link></li>
+            <li className="font-bold"><Link to="/course">COURSES</Link></li>
+            <li className="font-bold"><Link to='/about'>ABOUT US</Link></li>
+
+            {/* <li className="font-bold uppercase"><Link to='/dashboard/userHome'>User home</Link></li> */}
+
+
+            {/* {
             user? <>
-            <span>{user?.displayName}</span>
+           <li className="font-bold uppercase"><Link to='/dashboard/userHome'> <span>{user?.displayName}</span></Link></li>
             <button onClick={handleLogOut} className="ring ring-yellow-500 px-4 rounded-3xl   btn-ghost">LogOut</button>
             </> : <>
             <li className="font-bold"><Link to='/login'>LOGIN</Link></li>
             </>
-        }
-    
-        
-        
-    </>
+        } */}
+
+            {
+                user ? <>
+                    <li className="font-bold uppercase"><Link to='/secret'>All  Classes</Link></li>
+                    <div className="dropdown">
+                        <label tabIndex={0} className="btn m-1 text-black bg-gradient-to-r from-red-500 to-yellow-500 hover:from-green-500 hover:to-blue-500 gap-2"><FaUser className="text-green-300"></FaUser>Profile</label>
+                        <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100  rounded-box w-52 ">
+                            <li className="font-bold uppercase text-white-600"><Link to='/dashboard/userHome'> <span>{user?.displayName}</span></Link></li>
+                            <li><button onClick={handleLogOut} className=" mt-2 px-4 rounded-3xl  text-white border-2 border-sky-500  btn-ghost bg-red-600">LogOut</button></li>
+                        </ul>
+                    </div>
+
+
+                </> : <>
+                    <li className="font-bold"><Link to='/login'>LOGIN</Link></li>
+                </>
+            }
+
+
+
+
+        </>
 
     return (
         <>
@@ -56,7 +75,7 @@ const NavBar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                   
+
                 </div>
             </div>
         </>

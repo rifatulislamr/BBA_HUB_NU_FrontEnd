@@ -1,6 +1,36 @@
 import { Link } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+
+
 
 const Footer = () => {
+  // const currentYear = new Date().getFullYear();
+   // State to store the current date and time
+   const [currentDateTime, setCurrentDateTime] = useState(new Date());
+
+   useEffect(() => {
+     // Function to update the current date and time every second
+     const updateDateTime = () => {
+       setCurrentDateTime(new Date());
+     };
+ 
+     // Update the date and time every second
+     const timer = setInterval(updateDateTime, 1000);
+ 
+     // Clean up the interval when the component is unmounted
+     return () => {
+       clearInterval(timer);
+     };
+   }, []);
+ 
+   // Format the date and time as desired
+   const formattedDateTime = currentDateTime.toLocaleString('en-bd', {
+     year: 'numeric',
+     month: 'long',
+     day: 'numeric',
+     
+   });
+
     return (
         <footer>
             <footer className="footer p-10 bg-base-300 text-base-content mt-5">
@@ -8,8 +38,8 @@ const Footer = () => {
     <span className="footer-title">Services</span> 
     <a className="link link-hover ">BBA NU</a> 
     <a className="link link-hover">BBA Degree</a> 
-    <a className="link link-hover">MS Office</a> 
-    <a className="link link-hover">HSC ICT</a>
+    {/* <a className="link link-hover">MS Office</a> 
+    <a className="link link-hover">HSC ICT</a> */}
   </div> 
   <div>
     <span className="footer-title">Company</span> 
@@ -51,7 +81,7 @@ const Footer = () => {
             </div> */}
             <div className="p-4 footer-center bg-base-300 text-base-content bg-slate-900">
                     <div>
-                        <p>Copyright © 2023 - All right reserved by Koders OT </p>
+                        <p>Copyright © {formattedDateTime} - All right reserved by Koders OT </p>
                     </div>
                 </div>
         </footer>

@@ -6,6 +6,8 @@ import Featured from "../Featured/Featured";
 import Testimonials from "../Testimonials/Testimonials";
 import './Home.css'
 import { useEffect } from "react";
+import BbaCourseList from "./BbaCourseList/BbaCourseList";
+import BbaCourseList2 from "./BbaCourseList/BbaCourseList2";
 
 const Home = () => {
     useEffect(() => {
@@ -21,7 +23,9 @@ const Home = () => {
             </Helmet>
             <Banner></Banner>
             <Category></Category>
-            <CourseCategory></CourseCategory>
+            {/* <CourseCategory></CourseCategory> */}
+             <BbaCourseList></BbaCourseList>
+             <BbaCourseList2></BbaCourseList2>
             {/* <PopularMenu></PopularMenu> */}
             <Featured></Featured>
             <Testimonials></Testimonials>

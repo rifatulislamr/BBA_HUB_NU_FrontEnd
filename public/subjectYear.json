@@ -1,0 +1,38 @@
+[
+    {
+        "id": "642c155b2c4774f05c36ee7c",
+        "name": "Principles of Accounting",
+        "price": "890",
+        "category": "firstYearBBA"
+    },
+    {
+        "id": "642c155b2c4774f05c36ee7a",
+        "name": "Principles of Finance",
+        "price": "890",
+        "category": "firstYearBBA"
+    },
+    {
+        "id": "642c155b2c4774f05c36ee7f",
+        "name": "Principles of Marketing",
+        "price": "890",
+        "category": "firstYearBBA"
+    },
+    {
+        "id": "642c155b2c4774f05c36ee7c",
+        "name": "Principles of Management",
+        "price": "890",
+        "category": "firstYearBBA"
+    },
+    {
+        "id": "642c155b2c4774f05c36ee7a",
+        "name": "Micro Economics",
+        "price": "890",
+        "category": "firstYearBBA"
+    },
+    {
+        "id": "642c155b2c4774f05c36ee7f",
+        "name": "History of the Emergence of Independent Bangladesh",
+        "price": "890",
+        "category": "firstYearBBA"
+    }
+]

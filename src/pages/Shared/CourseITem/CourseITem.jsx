@@ -1,12 +1,10 @@
-import React from 'react';
-
-
+import './CourseITem.css'
 
 const CourseITem = ({item}) => {
     const {name, image,price} = item;
     return (
         
-            <div className="flex space-x-2">
+            <div className="cardItem flex space-x-2">
             <img style={{borderRadius: '15px'}} className="w-[150px]" src={image} alt="" />
           
            <div>

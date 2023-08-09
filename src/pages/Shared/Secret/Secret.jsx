@@ -1,10 +1,18 @@
+import { Helmet } from "react-helmet-async";
+import Testimonials from "../../Home/Testimonials/Testimonials";
+
 
 
 const Secret = () => {
     return (
-        <div>
-            <h1>this is the secret file without login or registration you cannot access this file.thank you!</h1>
-        </div>
+    <>
+    <Helmet>
+                <title>BBA HUB | Classes </title>
+            </Helmet>
+      <h1>this is secret video tutorial page</h1>
+      <Testimonials></Testimonials>
+    </>
+        
     );
 };
 
