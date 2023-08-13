@@ -103,6 +103,7 @@ const Login = () => {
               </div>
               <div className="form-control">
                 <label className="label">
+                  
                   {/* <LoadCanvasTemplate /> */}
                 </label>
                 {/* <input onBlur={handleValidateCaptcha} type="text" name="captcha" placeholder="type the text above" className="input input-bordered" /> */}

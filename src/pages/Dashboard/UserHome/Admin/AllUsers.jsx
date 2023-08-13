@@ -14,7 +14,7 @@ const AllUsers = () => {
         return res.data;
     })
     const handleMakeAdmin = user => {
-        fetch(`http://localhost:5000/users/admin/${user._id}`, {
+        fetch(`/users/admin/${user._id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())
@@ -42,7 +42,8 @@ const AllUsers = () => {
             <Helmet>
                 <title>BBA HUB | All users </title>
             </Helmet>
-            <h3 className="text-3xl font-semibold overflow-x-auto ">Total Users: {users.length}</h3>
+         
+            <h3 className="text-3xl font-semibold overflow-x-auto text-center mb-2 mt-10">Total Users: {users.length}</h3>
 
             <div className="overflow-x-auto ">
                 <table className="table table-zebra">

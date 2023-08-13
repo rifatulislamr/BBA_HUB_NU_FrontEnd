@@ -15,9 +15,10 @@ const Course = () => {
     const [menu] = useCourse();
     
     
-    const degree = menu.filter(item => item.category === 'degree');
-    const bba = menu.filter(item => item.category === 'bba');
-    const mba = menu.filter(item => item.category === 'mba');
+    
+    const bba = menu.filter(item => item.category === 'firstYearBBA');
+    const mba = menu.filter(item => item.category === 'secondYearBBA');
+    // const degree = menu.filter(item => item.category === 'degree');
 
     return (
         <div>
@@ -25,14 +26,17 @@ const Course = () => {
                 <title>BBA HUB | Course </title>
             </Helmet>
             <CoverPageShare img={courseImg} title= "Courses" ></CoverPageShare>
-            <SectionTitle subHeading="buy and get success" heading="bba course"></SectionTitle>
+            <SectionTitle subHeading="buy and get success" heading="First Year Courses"></SectionTitle>
             <CourseList items = {bba}></CourseList>
 
-            <SectionTitle subHeading="buy and get success" heading="mba course"></SectionTitle>
+            <SectionTitle subHeading="buy and get success" heading="Second Year Courses"></SectionTitle>
             <CourseList items = {mba}></CourseList>
 
-            <SectionTitle subHeading="buy and get success" heading="degree course"></SectionTitle>
-            <CourseList items = {degree}></CourseList>
+            {/* <SectionTitle subHeading="buy and get success" heading="Third Year Courses"></SectionTitle>
+            <CourseList items = {degree}></CourseList> */}
+
+            {/* <SectionTitle subHeading="buy and get success" heading="Fourth Year Courses"></SectionTitle>
+            <CourseList items = {degree}></CourseList> */}
            
            
 

@@ -1,6 +1,3 @@
-
-
-
 const CourseDetails = ({item}) => {
     const {name, image,price} = item;
       return (

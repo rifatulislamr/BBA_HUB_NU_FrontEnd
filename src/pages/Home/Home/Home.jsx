@@ -8,6 +8,7 @@ import './Home.css'
 import { useEffect } from "react";
 import BbaCourseList from "./BbaCourseList/BbaCourseList";
 import BbaCourseList2 from "./BbaCourseList/BbaCourseList2";
+import FAQ from "../FAQ/FAQ";
 
 const Home = () => {
     useEffect(() => {
@@ -28,6 +29,7 @@ const Home = () => {
              <BbaCourseList2></BbaCourseList2>
             {/* <PopularMenu></PopularMenu> */}
             <Featured></Featured>
+            <FAQ></FAQ>
             <Testimonials></Testimonials>
         </div>
     );

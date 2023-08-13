@@ -13,6 +13,13 @@ import Secret from "../pages/Shared/Secret/Secret";
 import UserHome from "../pages/Dashboard/UserHome/UserHome";
 import Dashboard from "../Layout/Dashboard";
 import AllUsers from "../pages/Dashboard/UserHome/Admin/AllUsers";
+import AllVideos from '../pages/Dashboard/AddVideos/AddVideos'
+import AdminPayment from "../pages/Dashboard/Payment/AdminPayment";
+import UserPayment from "../pages/Dashboard/Payment/UserPayment";
+import UserReview from "../pages/Dashboard/Review/UserReview";
+import AdminRoute from "./AdminRoute";
+import AdminHome from "../pages/Dashboard/UserHome/Admin/AdminHome";
+
 
 
 
@@ -56,16 +63,37 @@ import AllUsers from "../pages/Dashboard/UserHome/Admin/AllUsers";
     },
     {
       path:'dashboard',
-      element:<Dashboard></Dashboard>,
+      element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
       children:[
         {
           path:'userHome',
           element:<UserHome></UserHome>
         },
         {
+          path: 'adminHome',
+          element:<AdminRoute><AdminHome></AdminHome></AdminRoute>
+        },
+        {
           path:'allUsers',
-          element:<AllUsers></AllUsers>
+          element: <AllUsers></AllUsers>
+        },
+        {
+          path: 'addVideos',
+          element: <AdminRoute><AllVideos></AllVideos></AdminRoute>
+        },
+        {
+          path: 'adminPayment',
+          element: <AdminRoute><AdminPayment></AdminPayment></AdminRoute>
+        },
+        {
+          path: 'userPayment',
+          element: <UserPayment></UserPayment>
+        },
+        {
+          path: 'userReview',
+          element: <UserReview></UserReview>
         }
+        
       ]
     }
   ]);
