@@ -1,20 +1,47 @@
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
-
+import React, { useState } from 'react';
+import axios from 'axios';
 
 const AddVideos = () => {
+     
+const [name,setName] = useState("");
+const [videos,setVideos] = useState([]);
+
+const handleSubmit=(e)=>{
+    e.preventDefault();
+
+    let formData = new FormData();
+    for(let key in videos){
+        formData.append("videos", videos[key]);
+    }
+
+    formData.append("name",name);
+
+    axios.post('http://localhost:5000/videos/upload',formData)
+    .then(success=>{
+        alert("Video submitted successfully");
+    })
+    .catch(err=>{
+        console.log(err);
+        alert("Error happened");
+    })
+}
+
+
+
     return (
         <div className="w-full px-10">
             <SectionTitle heading="Add Video"></SectionTitle>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div className="form-control w-full max-w-xs">
-                    <label className="label">
-                        <span className="label-text font-semibold">Input your name*</span>
+                  <label className="label">
+                        <span className="label-text font-semibold">Video Name</span>
 
-                    </label>
-                    <input type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs" />
+                    </label> 
+                    <input type="text" name='name' id ='name' onChange={(e)=> setName(e.target.value)} className="input input-bordered w-full max-w-xs" /> 
 
                 </div>
-                <div className="form-control w-full max-w-xs mb-36">
+                {/* <div className="form-control w-full max-w-xs mb-36">
                     <label className="label">
                         <span className="label-text">Category*</span>
                     </label>
@@ -29,15 +56,19 @@ const AddVideos = () => {
                         <option>INTERMEDIATE ACCOUNTING</option>
                     </select>
 
-                </div>
+                </div> */}
+
+
                 <div className="form-control w-full max-w-xs">
                     <label className="label">
                         <span className="label-text">Choose Video</span>
                     </label>
-                    <input type="file" className="file-input file-input-bordered w-full max-w-xs" />
+                    <input type="file"  name="videos" id ="videos" multiple accept=".mp4,.mkv" onChange={(e)=>{
+                        setVideos(e.target.files);
+                    }} className="file-input file-input-bordered w-full max-w-xs" />
                     
                 </div>
-                <input className="btn btn-primary mt-2" type="submit" value="Add Video" />
+                <button type="submit"  className="btn btn-primary mt-2">Upload Video</button>
             </form>
         </div>
     );

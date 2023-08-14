@@ -9,7 +9,7 @@ const BbaCourseListView = ({ item }) => {
     return (
 
         // div class: 
-        <div className="flex space-x-2 bg-rose-900 rounded-3xl">
+        <div className="flex space-x-2 bg-gradient-to-r from-cyan-800 to--800 rounded-3xl">
             {user ? <>
 
 

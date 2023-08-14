@@ -58,7 +58,6 @@ import AdminHome from "../pages/Dashboard/UserHome/Admin/AdminHome";
           path: 'secret',
           element: <PrivateRoute><Secret></Secret></PrivateRoute>
         }
-
       ]
     },
     {

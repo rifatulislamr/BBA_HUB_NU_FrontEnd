@@ -13,7 +13,7 @@ const UserHome = () => {
                 <title>BBA HUB | Users home </title>
             </Helmet>
         
-        <img className="relative " src={ProfileImg} alt="" />
+    <img className="relative " src={ProfileImg} alt="" />
        <h1 className="uppercase text-white font-extrabold mt-5 ">UserName : <span className="text-red-400">{user?.displayName}</span> </h1>
        <h1 className="uppercase text-white font-extrabold mt-5 mb-4">Email : <span className="lowercase text-red-400">{user?.email}</span> </h1>
        
