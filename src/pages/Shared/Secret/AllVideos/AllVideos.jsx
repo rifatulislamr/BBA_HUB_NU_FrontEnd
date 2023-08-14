@@ -23,40 +23,37 @@ const AllVideos = () => {
     }
 
     return (
-        <div>
+        <div style={{ background: "white" }}>
             <h1>This is from videos</h1>
-            
-
             {
+                videos.map(files => {
+                    return (
+                        <div>
+                            <h1>{files.name}</h1>
+                            {
+                                files.videos.map(file => {
+                                    console.log(file)
+                                    return (
+                                        <div style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
+                                            <video controls width='600' height='280'>
+                                                <source src={`${baseUrl}${file}`} type="video/mp4" />
+                                                <source src={`${baseUrl}${file}`} type="video/x-matroska" />
+                                            </video>
+                                        </div>
+                                    )
+                                })
+                            }
+                        </div>
+                    )
 
-                
-                
+                })
             }
-        
-            
         </div>
     );
 };
 
 export default AllVideos;
-// {
-//     videos.map(files => {
-//         return (
-//             <div>
-//                 <h1>{files.name}</h1>
-//                {
-//                 files.videos.map(file => {
-//                     console.log(file)
-//                  return (
-//                     <video preload='auto' width='320' height='240' >
-//                     <source src={`${baseUrl}${file}`} />
-//                     your browser does not support the video tag.
-//                     </video> 
-//                   )
-//                 })
-//                }
-//             </div>
-//         )
-
-//     })
-// }
+{/* <video preload='auto' width='320' height='240' >
+                    <source src={`${baseUrl}${file}`} />
+                    your browser does not support the video tag.
+                    </video>  */}
