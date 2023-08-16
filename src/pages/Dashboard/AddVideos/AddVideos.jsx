@@ -1,31 +1,43 @@
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 
+import { AuthContext } from "../../../providers/AuthProvider";
+
 const AddVideos = () => {
-     
-const [name,setName] = useState("");
-const [videos,setVideos] = useState([]);
+    const { user } = useContext(AuthContext);
+    const [userEmail,setUserEmail] = useState({});
+    const [name, setName] = useState("");
+    const [videos, setVideos] = useState([]);
+    const [category, setCategory] = useState("");
 
-const handleSubmit=(e)=>{
-    e.preventDefault();
+useEffect(()=> {
+    setUserEmail(user.email);
+  
+},[user])
 
-    let formData = new FormData();
-    for(let key in videos){
-        formData.append("videos", videos[key]);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        let formData = new FormData();
+        for (let key in videos) {
+            formData.append("videos", videos[key]);
+        }
+        console.log(userEmail);
+        formData.append("name", name);
+        formData.append("category", category);
+        formData.append("user",userEmail);
+
+        axios.post('http://localhost:5000/videos/upload', formData)
+            .then(success => {
+                alert("Video submitted successfully");
+            })
+            .catch(err => {
+                console.log(err);
+                alert("Error happened");
+            })
     }
-
-    formData.append("name",name);
-
-    axios.post('http://localhost:5000/videos/upload',formData)
-    .then(success=>{
-        alert("Video submitted successfully");
-    })
-    .catch(err=>{
-        console.log(err);
-        alert("Error happened");
-    })
-}
 
 
 
@@ -34,41 +46,45 @@ const handleSubmit=(e)=>{
             <SectionTitle heading="Add Video"></SectionTitle>
             <form onSubmit={handleSubmit}>
                 <div className="form-control w-full max-w-xs">
-                  <label className="label">
+                    <label className="label">
                         <span className="label-text font-semibold">Video Name</span>
 
-                    </label> 
-                    <input type="text" name='name' id ='name' onChange={(e)=> setName(e.target.value)} className="input input-bordered w-full max-w-xs" /> 
+                    </label>
+                    <input type="text" name='name' id='name' onChange={(e) => setName(e.target.value)} className="input input-bordered w-full max-w-xs" />
 
                 </div>
-                {/* <div className="form-control w-full max-w-xs mb-36">
+                <div className="form-control w-full max-w-xs mb-36">
                     <label className="label">
                         <span className="label-text">Category*</span>
                     </label>
-                    <select className="select select-bordered bg">
-                        <option disabled selected>Pick one</option>
-                        <option>COMPUTER AND INFORMATION TECHNOLOGY</option>
-                        <option>BUSINESS STATISTICS</option>
-                        <option>BUSINESS COMMUNICATION</option>
-                        <option>BUSINESS MATHEMATICS</option>
-                        <option>MICRO ECONOMICS</option>
-                        <option>TAXATION IN BANGLADESH</option>
-                        <option>INTERMEDIATE ACCOUNTING</option>
-                    </select>
+                    <select
+                        className="select select-bordered bg"
+                        value={category}
+                        onChange={(e) => setCategory(e.target.value)}
+                    >
+                        <option disabled value="">Pick one</option>
+                        <option value="COMPUTER AND INFORMATION TECHNOLOGY">COMPUTER AND INFORMATION TECHNOLOGY</option>
+                        <option value="BUSINESS STATISTICS">BUSINESS STATISTICS</option>
+                        <option value="MICRO ECONOMICS">MICRO ECONOMICS</option>
+                        <option value="BUSINESS COMMUNICATION">BUSINESS COMMUNICATION</option>
+                        <option value="TAXATION IN BANGLADESH">TAXATION IN BANGLADESH</option>
+                        <option value="BUSINESS MATHEMATICS">BUSINESS MATHEMATICS</option>
+                        <option value="INTERMEDIATE ACCOUNTING">INTERMEDIATE ACCOUNTING</option>
 
-                </div> */}
+                    </select>
+                </div>
 
 
                 <div className="form-control w-full max-w-xs">
                     <label className="label">
                         <span className="label-text">Choose Video</span>
                     </label>
-                    <input type="file"  name="videos" id ="videos" multiple accept=".mp4,.mkv" onChange={(e)=>{
+                    <input type="file" name="videos" id="videos" multiple accept=".mp4,.mkv" onChange={(e) => {
                         setVideos(e.target.files);
                     }} className="file-input file-input-bordered w-full max-w-xs" />
-                    
+
                 </div>
-                <button type="submit"  className="btn btn-primary mt-2">Upload Video</button>
+                <button type="submit" className="btn btn-primary mt-2">Upload Video</button>
             </form>
         </div>
     );

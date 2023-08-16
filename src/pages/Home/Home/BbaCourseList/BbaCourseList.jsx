@@ -26,7 +26,9 @@ const BbaCourseList = () => {
                     </BbaCourseListView>)
                 }
             </div >
-            <Link to='/course'> <button className="btn btn-outline border-0 border-b-4 mt-4 ">View Full course</button></Link>
+           <div className='text-center mt-4'>
+           <Link to='/course'> <button className="btn btn-outline border-0 border-b-4 mt-4 bg-blue-800  ">View Full course</button></Link>
+           </div>
         </section>
     );
 };

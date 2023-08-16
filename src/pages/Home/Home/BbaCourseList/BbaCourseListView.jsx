@@ -18,11 +18,12 @@ const BbaCourseListView = ({ item }) => {
 
                     <div>
                         <h3 className="uppercase text-xl mt-10 font-bold  py-2 px-4  text-green-400 "><li className='mx-3'>{name}</li></h3>
-                        <p className="text-3xl font-bold py-4 ml-8">৳ {price}</p>
+                        <p className="text-3xl font-bold py-2 ml-8">৳ {price}</p>
+                        <button className="btn  border-0 border-b-4 mt-4 ml-4 mb-4  bg-blue-900 ">Purchase</button>
                     </div>
 
 
-                    <button className="btn btn-outline border-0 border-b-4 mt-4 ">Purchase</button>
+                  
 
                 </Link>
 
@@ -31,9 +32,11 @@ const BbaCourseListView = ({ item }) => {
 
                 <Link to='/login'>
 
-                    <h3 className="uppercase text-xl mt-10 font-bold  py-2 px-4  text-green-400 "><li className='mx-3'>{name}</li></h3>
-                    <p className="text-3xl font-bold py-4 ml-8">৳ {price}</p>
-                    <button className="btn btn-outline border-0 border-b-4 mt-4 ">Purchase</button>
+                <div>
+                        <h3 className="uppercase text-xl mt-10 font-bold  py-2 px-4  text-green-400 "><li className='mx-3'>{name}</li></h3>
+                        <p className="text-3xl font-bold py-2 ml-8">৳ {price}</p>
+                        <button className="btn  border-0 border-b-4 mt-4 ml-4 mb-4  bg-blue-900 ">Purchase</button>
+                    </div>
                 </Link>
 
             </>

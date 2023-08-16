@@ -7,14 +7,14 @@ const AdminHome = () => {
     const { user } = useContext(AuthContext);
     
     return (
-        <div>
+        <div className=' w-full text-center  mt-10'>
             <Helmet>
                 <title>BBA HUB | Admin home </title>
             </Helmet>
-
-            <img className="relative " src={ProfileImg} alt="" />
-            <h1 className="uppercase text-white font-extrabold mt-5 ">UserName : <span className="text-red-400">{user?.displayName}</span> </h1>
-            <h1 className="uppercase text-white font-extrabold mt-5 mb-4">Email : <span className="lowercase text-red-400">{user?.email}</span> </h1>
+            <h1 className=' mb-10 text-5xl   '> Welcome Back <br></br> <span className="uppercase  text-4xl ">{user?.displayName}</span></h1>
+            <img className='block mx-auto' src={ProfileImg} alt="" />
+            <h1 className="  font-extrabold mt-5 ">UserName : <span className='text-white uppercase'>{user?.displayName}</span> </h1>
+            <h1 className="  font-extrabold mt-5 mb-4">Email : <span className='text-white'>{user?.email}</span> </h1>
 
 
         </div>
@@ -22,3 +22,4 @@ const AdminHome = () => {
 };
 
 export default AdminHome;
+

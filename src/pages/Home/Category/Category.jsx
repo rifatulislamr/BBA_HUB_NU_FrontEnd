@@ -15,7 +15,7 @@ const Category = () => {
     return (
         <section>
             <SectionTitle 
-            // subHeading={"From 11.00am to 10.00pm"}
+          
             heading={"Popular Courses"}
             ></SectionTitle>
             <Swiper
@@ -30,24 +30,32 @@ const Category = () => {
             >
                 <SwiperSlide>
                     <img src={slide1} alt="" />
-                    <h3 className="text-4xl uppercase text-center -mt-2 text-rose-700 backdrop-blur	">Accounting</h3>
+                    <h3 className="text-2xl uppercase text-center -mt-2 text-green-400 backdrop-blur-md	">COMPUTER AND INFORMATION TECHNOLOGY</h3>
                 </SwiperSlide>
                 
                 <SwiperSlide>
                     <img src={slide2} alt="" />
-                    <h3 className="text-4xl uppercase text-center -mt-2  text-rose-700 backdrop-blur ">B Math</h3>
+                    <h3 className="text-2xl uppercase text-center -mt-2  text-green-400 backdrop-blur-md  ">BUSINESS STATISTICS</h3>
                 </SwiperSlide>
                 <SwiperSlide>
                     <img src={slide3} alt="" />
-                    <h3 className="text-4xl uppercase text-center -mt-2  text-rose-700 backdrop-blur ">Finance</h3>
+                    <h3 className="text-2xl uppercase text-center -mt-2  text-green-400 backdrop-blur-md  ">MICRO ECONOMICS</h3>
                 </SwiperSlide>
                 <SwiperSlide>
                     <img src={slide4} alt="" />
-                    <h3 className="text-4xl uppercase text-center -mt-2  text-rose-700 backdrop-blur ">Banking</h3>
+                    <h3 className="text-2xl uppercase text-center -mt-2  text-green-400 backdrop-blur-md  ">BUSINESS COMMUNICATION</h3>
                 </SwiperSlide>
                 <SwiperSlide>
                     <img src={slide5} alt="" />
-                    <h3 className="text-4xl uppercase text-center -mt-2  text-rose-700 backdrop-blur ">STAT</h3>
+                    <h3 className="text-2xl uppercase text-center -mt-2  text-green-400 backdrop-blur-md  ">TAXATION IN BANGLADESH</h3>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <img src={slide5} alt="" />
+                    <h3 className="text-2xl uppercase text-center -mt-2  text-green-400 backdrop-blur-md  ">BUSINESS MATHEMATICS</h3>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <img src={slide5} alt="" />
+                    <h3 className="text-2xl uppercase text-center -mt-2  text-green-400 backdrop-blur-md  ">INTERMEDIATE ACCOUNTING</h3>
                 </SwiperSlide>
             </Swiper>
         </section>

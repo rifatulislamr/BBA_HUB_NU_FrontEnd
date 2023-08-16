@@ -15,7 +15,7 @@ const Dashboard = () => {
 
 
   return (
-    <div className="drawer drawer-mobile bg-slate-700">
+    <div className="drawer drawer-mobile bg-slate-800">
 
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col items-center  ">
@@ -27,7 +27,7 @@ const Dashboard = () => {
       </div>
       <div className="drawer-side">
         <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-        <ul className="menu p-6 w-60 h-full bg-base-200 text-base-content">
+        <ul className="menu p-6 w-60 h-full bg-base-200 text-base-content bg-gray-900 rounded-3xl">
           {/* Sidebar content here */}
 
           {
@@ -38,6 +38,7 @@ const Dashboard = () => {
 
               <li className="text-white text-bold"><Link to='/dashboard/adminHome'><FaUser></FaUser>Admin Home</Link></li>
               <li className="text-white text-bold"><Link to='/dashboard/addVideos'><FaVideoSlash></FaVideoSlash>Add Videos</Link></li>
+              <li className="text-white text-bold"><Link to='/dashboard/dashBAllVideos'><FaVideoSlash></FaVideoSlash>All Videos</Link></li>
               <li className="text-white text-bold"><Link to='/dashboard/adminPayment'><FaDollarSign></FaDollarSign>Admin Payment Dashboard</Link></li>
               <li className="text-white text-bold"><Link to='/dashboard/allUsers'><FaUsers></FaUsers>User Management</Link></li>
 

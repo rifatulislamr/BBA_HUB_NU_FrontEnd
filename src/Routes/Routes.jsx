@@ -19,6 +19,7 @@ import UserPayment from "../pages/Dashboard/Payment/UserPayment";
 import UserReview from "../pages/Dashboard/Review/UserReview";
 import AdminRoute from "./AdminRoute";
 import AdminHome from "../pages/Dashboard/UserHome/Admin/AdminHome";
+import DashBAllVideos from "../pages/Dashboard/DashBAllVideos/DashBAllVideos";
 
 
 
@@ -79,6 +80,10 @@ import AdminHome from "../pages/Dashboard/UserHome/Admin/AdminHome";
         {
           path: 'addVideos',
           element: <AdminRoute><AllVideos></AllVideos></AdminRoute>
+        },
+        {
+          path: 'dashBAllVideos',
+          element: <AdminRoute><DashBAllVideos></DashBAllVideos></AdminRoute>
         },
         {
           path: 'adminPayment',

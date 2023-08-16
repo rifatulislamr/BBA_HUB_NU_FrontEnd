@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import SectionTitle from '../../../../components/SectionTitle/SectionTitle';
 
 const AllVideos = () => {
     const [videos, setVideos] = useState([]);
@@ -23,13 +24,15 @@ const AllVideos = () => {
     }
 
     return (
-        <div style={{ background: "white" }}>
-            <h1>This is from videos</h1>
+        <div>
+           
+            <SectionTitle heading='All videos'></SectionTitle>
+            <div className="grid md:grid-cols-3 gap-10">
             {
                 videos.map(files => {
                     return (
                         <div>
-                            <h1>{files.name}</h1>
+                            <h1 className='uppercase text-center mb-2 bg-slate-700 rounded-3xl text-green-500'>{files.name}</h1>
                             {
                                 files.videos.map(file => {
                                     console.log(file)
@@ -48,12 +51,9 @@ const AllVideos = () => {
 
                 })
             }
+            </div>
         </div>
     );
 };
 
 export default AllVideos;
-{/* <video preload='auto' width='320' height='240' >
-                    <source src={`${baseUrl}${file}`} />
-                    your browser does not support the video tag.
-                    </video>  */}
