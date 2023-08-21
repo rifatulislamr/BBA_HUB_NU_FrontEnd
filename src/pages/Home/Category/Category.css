@@ -1,0 +1,20 @@
+/* Category.css */
+
+/* Default styles */
+.text-2xl {
+    font-size: 1.5rem; /* Default font size for large screens */
+}
+
+/* Responsive styles for smaller screens (e.g., tablets and mobile devices) */
+@media screen and (max-width: 768px) {
+    .text-2xl {
+        font-size: 1.2rem; /* Adjust font size for smaller screens */
+    }
+}
+
+/* Additional media queries for even smaller screens if needed */
+@media screen and (max-width: 480px) {
+    .text-2xl {
+        font-size: 1rem; /* Further adjust font size for mobile devices */
+    }
+}

@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
@@ -12,7 +12,7 @@ import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 export const SignUp = () => {
 
   const { register, handleSubmit, reset, formState: { errors } } = useForm();
-
+  const [showPassword, setShowPassword] = useState(false); // State to control password visibility
   const { createUser, updateUserProfile } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -109,15 +109,23 @@ export const SignUp = () => {
                 <label className="label">
                   <span className="label-text">Password</span>
                 </label>
-                <input type="password" {...register("password", {
+                <input type={showPassword ? "text" : "password"} {...register("password", {
                   required: true,
                   minLength: 8,
                   maxLength: 20,
                   pattern: /(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])/
                 })} placeholder="password" className="input input-bordered" />
-                {errors.password?.type === 'minLength' && <span className="text-rose-600">Password must be  characters!</span>}
+                
+                {errors.password?.type === 'minLength' && <span className="text-rose-600">Password must be 8 characters!</span>}
                 {errors.password?.type === 'maxLength' && <span className="text-rose-600">Password must less than 20 characters!</span>}
                 {errors.password?.type === 'pattern' && <span className="text-rose-600">Password must have one upper case, one lower case, one number and one special character!</span>}
+                <button
+                  type="button"
+                  className="btn btn-sm btn-secondary mt-2"
+                  onClick={() => setShowPassword(prevShowPassword => !prevShowPassword)}
+                >
+                  {showPassword ? "Hide" : "Show"} Password
+                </button>
                 <label className="label">
                   <a href="#" className="label-text-alt link link-hover text-pink-400 text-bold">Forgot password?</a>
                 </label>

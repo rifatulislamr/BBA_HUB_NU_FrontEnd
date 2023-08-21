@@ -63,7 +63,7 @@ useEffect(()=> {
                         onChange={(e) => setCategory(e.target.value)}
                     >
                         <option disabled value="">Pick one</option>
-                        <option value="COMPUTER AND INFORMATION TECHNOLOGY">COMPUTER AND INFORMATION TECHNOLOGY</option>
+                        <option value="C_A_IT">COMPUTER AND INFORMATION TECHNOLOGY</option>
                         <option value="BUSINESS STATISTICS">BUSINESS STATISTICS</option>
                         <option value="MICRO ECONOMICS">MICRO ECONOMICS</option>
                         <option value="BUSINESS COMMUNICATION">BUSINESS COMMUNICATION</option>

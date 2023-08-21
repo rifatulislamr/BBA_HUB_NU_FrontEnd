@@ -1,4 +1,4 @@
-.BbaHubBanner{
+/* .BbaHubBanner{
     object-fit: contain;
     height: 100%;
     width: 100%;
@@ -10,4 +10,35 @@
     min-height: 70vh ;
     width: auto;
 
+} */
+
+
+
+
+
+/* Banner.css */
+.BbaHubBanner {
+    width: 100%; /* Default width */
+    max-height: 80vh;
+}
+
+/* Small screens (up to 768px) */
+@media (max-width: 768px) {
+    .BbaHubBanner {
+        /* Adjust styling for small screens */
+    }
+}
+
+/* Medium screens (769px to 992px) */
+@media (min-width: 769px) and (max-width: 992px) {
+    .BbaHubBanner {
+        /* Adjust styling for medium screens */
+    }
+}
+
+/* Large screens (993px and above) */
+@media (min-width: 993px) {
+    .BbaHubBanner {
+        /* Adjust styling for large screens */
+    }
 }

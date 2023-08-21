@@ -20,10 +20,11 @@ const Service = () => {
     const [tabIndex, setTabIndex] = useState(0);
     const [menu] = useCourse();
     
+    
     const bba = menu.filter(item => item.category === 'bba');
     const mba = menu.filter(item => item.category === 'mba');
     const degree = menu.filter(item => item.category === 'degree');
-    const fourthYear = menu.filter(item => item.category === 'degree');
+    const fourthYear = menu.filter(item => item.category === 'mba');
     
 
     return (
@@ -33,7 +34,7 @@ const Service = () => {
             </Helmet>
             <CoverPageShare img={courseImg} title= "Services" ></CoverPageShare>
             <Tabs defaultIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
-                     <TabList className="text-center mt-4 mb-4 space-x-5 text-black font-bold rounded-b-box">
+                     <TabList className="text-center mt-4 mb-4 space-x-5 text-amber-50 font-bold rounded-lg">
                         <Tab>First Year</Tab>
                         <Tab> Second Year</Tab>
                         <Tab>Third Year</Tab>
