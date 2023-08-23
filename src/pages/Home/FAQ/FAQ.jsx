@@ -61,7 +61,7 @@ const FAQ = () => {
             <div className="collapse bg-base-200">
                 <input type="checkbox" checked={activeIndex === 0} onChange={() => toggleAccordion(0)} />
                 <div className="collapse-title text-xl font-medium text-green-400 uppercase text-center">
-                    how to Login? আমি কিভাবে লগইন করব?
+                    how to Login? 
                 </div>
                 {/* Use className based on activeIndex to show/hide content */}
                 <div className={`collapse-content text-gray-300 ${activeIndex === 0 ? 'open' : 'closed'}`}>

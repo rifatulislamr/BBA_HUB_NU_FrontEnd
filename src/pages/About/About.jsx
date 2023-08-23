@@ -1,9 +1,9 @@
 import { Helmet } from "react-helmet-async";
 import CoverPageShare from "../Shared/CoverPageShare/CoverPageShare";
 import aboutImg from './../../assets/menu/banner3.jpg'
-import Testimonials from "../Home/Testimonials/Testimonials";
-import Footer from "../Shared/Footer/Footer";
+
 import { useEffect } from "react";
+import TPanel from "./AboutCompo/TPanel";
 
 
 const About = () => {
@@ -18,6 +18,7 @@ const About = () => {
                 <title>BBA HUB | About Us </title>
             </Helmet>
             <CoverPageShare img={aboutImg} title= "About us" ></CoverPageShare>
+            <TPanel></TPanel>
            
         </div>
     );

@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 
 import { AuthContext } from "../../../providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const AddVideos = () => {
     const { user } = useContext(AuthContext);
@@ -31,7 +32,14 @@ useEffect(()=> {
 
         axios.post('http://localhost:5000/videos/upload', formData)
             .then(success => {
-                alert("Video submitted successfully");
+                // alert("Video submitted successfully");
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: `Video submitted successfully `,
+                    showConfirmButton: false,
+                    timer: 1500
+                });
             })
             .catch(err => {
                 console.log(err);
