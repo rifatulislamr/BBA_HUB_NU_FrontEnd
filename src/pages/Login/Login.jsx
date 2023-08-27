@@ -174,6 +174,7 @@ const Login = () => {
         <div className="hero-content flex-col md:flex-row-reverse mt-14 w-[100%]  justify-start">
           <div className="text-center md:w-1/2 lg:text-center mx-10">
             <h1 className="text-5xl font-bold">Login now!</h1>
+            <p className="text-lg font-bold mt-4">Welcome back! Let's take you to your account</p>
           </div >
           <div className="card  shadow-2xl bg-base-100">
             <form onSubmit={handleLogin}  className="card-body">
@@ -262,3 +263,10 @@ const Login = () => {
 };
 
 export default Login;
+
+
+
+
+
+
+

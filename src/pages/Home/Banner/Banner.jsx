@@ -2,10 +2,10 @@
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-import img1 from '../../../assets/home/01.jpg';
-import img2 from '../../../assets/home/02.jpg';
-import img3 from '../../../assets/home/03.jpg'
-import img4 from '../../../assets/home/10.jpg';
+import img1 from '../../../assets/home/banners/banner-01.jpg';
+import img2 from '../../../assets/home/banners/banner-03.jpg';
+import img3 from '../../../assets/home/banners/course-01.jpg';
+import img4 from '../../../assets/home/banners/course-02.jpg';
 import './Banner.css'
 
 const Banner = () => {

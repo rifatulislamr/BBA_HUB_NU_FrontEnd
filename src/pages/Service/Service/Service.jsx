@@ -5,7 +5,6 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { useEffect, useState } from "react";
 import useCourse from "../../../hooks/useHooks";
-import CourseDetails from "../../../components/SectionTitle/CourseDetails/CourseDetails/CourseDetails";
 import CourseDetailsTab from "../../../components/SectionTitle/CourseDetails/CourseDetailsTab/CourseDetailsTab";
 
 

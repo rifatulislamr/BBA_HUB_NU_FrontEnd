@@ -3,16 +3,19 @@ import Footer from "../pages/Shared/Footer/Footer";
 import NavBar from "../pages/Shared/NavBar/NavBar";
 
 
+
 const Main = () => {
     // const location = useLocation();
-    // const noHeaderFooter = location.pathname.includes('login') || location.pathname.includes('signUp');
+    // const noHeader = location.pathname.includes('login') || location.pathname.includes('signUp');
 
     return (
         <div>
-           {/* { noHeaderFooter || <NavBar></NavBar>}
-            <Outlet></Outlet>
+           {/* { noHeader || <NavBar></NavBar>}
+           
            { noHeaderFooter|| <Footer></Footer>} */}
+         
            <NavBar></NavBar>
+          
             <Outlet></Outlet>
             <Footer></Footer>
         </div>

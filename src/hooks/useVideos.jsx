@@ -5,7 +5,9 @@ const useVideos = () => {
    const [videos, setVideos] = useState([]);
    const [loading, setLoading] = useState(true);
    useEffect(() => {
-            fetch('http://localhost:5000/videos')
+            fetch('http://localhost:5000
+
+/videos')
             
           
                 .then(res => res.json())
@@ -30,7 +32,9 @@ export default useVideos;
 //     useEffect(() => {
 //         const fetchVideos = async () => {
 //             try {
-//                 const response = await fetch(`http://localhost:5000/Videos?category=${category}`);
+//                 const response = await fetch(`http://localhost:5000
+
+/Videos?category=${category}`);
 //                 const data = await response.json();
 //                 setVideos(data);
 //                 setLoading(false);

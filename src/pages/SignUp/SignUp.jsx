@@ -18,16 +18,17 @@ export const SignUp = () => {
 
   const onSubmit = data => {
 
-    console.log(data)
+    // console.log(data)
     createUser(data.email, data.password)
       .then(result => {
         const loggedUser = result.user;
         console.log(loggedUser);
         updateUserProfile(data.name, data.photoURL)
+        
           .then(() => {
             // console.log('user profile info updated')
 
-            const saveUser = { name: data.name, email: data.email }
+            const saveUser = { name: data.name, email: data.email,courses:[] }
 
             fetch('http://localhost:5000/users', {
               method: 'POST',
@@ -61,7 +62,15 @@ export const SignUp = () => {
           .catch(error => console.log(error))
 
       })
-
+      .catch(error=>{
+        Swal.fire({
+          position: 'top-end',
+          icon: 'error',
+          title: 'Email is already taken',
+          showConfirmButton: false,
+          timer: 2000
+        });
+      })
   };
 
 
@@ -80,6 +89,7 @@ export const SignUp = () => {
         <div className="hero-content flex-col lg:flex-row-reverse mt-14 w-[100%]  justify-start">
           <div className="text-center md:w-1/2 lg:text-center ">
             <h1 className="text-5xl font-bold">Sign Up now!</h1>
+            <p className="text-lg font-bold mt-4">Welcome back! Let's take you to your account</p>
             
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
@@ -126,9 +136,7 @@ export const SignUp = () => {
                 >
                   {showPassword ? "Hide" : "Show"} Password
                 </button>
-                <label className="label">
-                  <a href="#" className="label-text-alt link link-hover text-pink-400 text-bold">Forgot password?</a>
-                </label>
+                
               </div>
               <div className="form-control mt-6">
                 <input className="btn btn-primary" type="submit" value="Sign Up" />

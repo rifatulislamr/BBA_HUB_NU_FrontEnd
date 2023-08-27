@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import CoverPageShare from "../CoverPageShare/CoverPageShare";
 import allClassImg from '../../../assets/menu/banner3.jpg'
 import AllVideos from "./AllVideos/AllVideos";
+import ResetPassword from "../../Login/ResetPassword";
 
 
 

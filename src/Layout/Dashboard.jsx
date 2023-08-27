@@ -1,5 +1,5 @@
 import { Link, Outlet } from "react-router-dom";
-import { FaEnvelopeOpenText, FaUser, FaWallet, FaVideoSlash } from "react-icons/fa6";
+import { FaEnvelopeOpenText, FaUser, FaWallet, FaVideoSlash, FaCartPlus } from "react-icons/fa6";
 import { FaDollarSign, FaHome, FaUsers } from "react-icons/fa";
 import useAdmin from "../hooks/useAdmin";
 import { Helmet } from "react-helmet-async";
@@ -27,7 +27,7 @@ const Dashboard = () => {
       </div>
       <div className="drawer-side">
         <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-        <ul className="menu p-6 w-60 h-full bg-base-200 text-base-content bg-gray-900 rounded-3xl">
+        <ul className="menu p-6 w-60 h-full  text-base-content bg-gray-900 rounded-3xl">
           {/* Sidebar content here */}
 
           {
@@ -48,6 +48,7 @@ const Dashboard = () => {
             </Helmet>
               <li className="text-white text-bold"><Link to='/dashboard/userHome'><FaUser></FaUser>User Home</Link></li>
               <li className="text-white text-bold"><Link to='/dashboard/userPayment'><FaWallet></FaWallet>User Payment Method</Link></li>
+              <li className="text-white text-bold"><Link to='/dashboard/addCourseCart'><FaCartPlus></FaCartPlus>My Course Cart</Link></li>
               <li className="text-white text-bold"><Link to='/dashboard/userReview'><FaEnvelopeOpenText></FaEnvelopeOpenText> Reviews</Link></li>
 
             </>

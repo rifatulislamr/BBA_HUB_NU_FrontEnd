@@ -4,6 +4,8 @@ import aboutImg from './../../assets/menu/banner3.jpg'
 
 import { useEffect } from "react";
 import TPanel from "./AboutCompo/TPanel";
+import Category from "../Home/Category/Category";
+import ResetPassword from "../Login/ResetPassword";
 
 
 const About = () => {
@@ -17,7 +19,10 @@ const About = () => {
             <Helmet>
                 <title>BBA HUB | About Us </title>
             </Helmet>
+            
             <CoverPageShare img={aboutImg} title= "About us" ></CoverPageShare>
+            
+            <Category></Category>
             <TPanel></TPanel>
            
         </div>

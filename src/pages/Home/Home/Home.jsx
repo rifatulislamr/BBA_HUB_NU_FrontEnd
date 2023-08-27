@@ -9,12 +9,13 @@ import { useEffect } from "react";
 import BbaCourseList from "./BbaCourseList/BbaCourseList";
 import BbaCourseList2 from "./BbaCourseList/BbaCourseList2";
 import FAQ from "../FAQ/FAQ";
+import DemoVideo from "./DemoVideo/DemoVideo";
 
 const Home = () => {
     useEffect(() => {
         // Scroll to the top-left corner (0,0) when the HomePage component is mounted
         window.scrollTo(0, 0);
-      }, []);
+    }, []);
     
     
     return (
@@ -24,6 +25,7 @@ const Home = () => {
             </Helmet>
             <Banner></Banner>
             <Category></Category>
+            <DemoVideo></DemoVideo>
             {/* <CourseCategory></CourseCategory> */}
              <BbaCourseList></BbaCourseList>
              <BbaCourseList2></BbaCourseList2>
