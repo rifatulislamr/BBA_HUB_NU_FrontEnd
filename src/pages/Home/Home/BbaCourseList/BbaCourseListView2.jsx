@@ -114,9 +114,11 @@ import React, { useContext, useState, useEffect } from 'react';
 import { AuthContext } from '../../../../providers/AuthProvider';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import useCourseCart from '../../../../hooks/useCourseCart';
 
 const BbaCourseListView2 = ({ item }) => {
     const { user } = useContext(AuthContext);
+    const [, refetch] = useCourseCart();
     const { name, price, _id } = item;
     const navigate = useNavigate();
     const location = useLocation();
@@ -135,7 +137,7 @@ const BbaCourseListView2 = ({ item }) => {
             if (hasAdded) {
                 Swal.fire({
                     icon: 'info',
-                    title: 'You Already Taken This Course',
+                    title: 'This Course is already add to cart',
                     text: 'Please Choose Another Course.',
                 });
             } else {
@@ -150,6 +152,7 @@ const BbaCourseListView2 = ({ item }) => {
                     .then(res => res.json())
                     .then(data => {
                         if (data.insertedId) {
+                            refetch();
                             setHasAdded(true);
                             // Store the cart item in Local Storage
                             const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
@@ -188,7 +191,7 @@ const BbaCourseListView2 = ({ item }) => {
                 <h3 className="uppercase text-xl md:text-2xl font-bold py-2 px-4 text-green-400">{name}</h3>
                 <p className="text-3xl md:text-4xl font-bold ml-8">৳ {price}</p>
                 <button onClick={() => handleAddToVideoCart(item)} className="btn border-0 border-b-4 mt-2 bg-blue-900">
-                    {hasAdded ? 'Course Added Cart' : 'Purchase'}
+                    {hasAdded ? 'Add To Cart' : 'Purchase'}
                 </button>
             </div>
         </div>

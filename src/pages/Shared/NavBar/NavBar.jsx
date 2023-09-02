@@ -210,11 +210,13 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 import { FaCartPlus, FaUser } from "react-icons/fa6";
 import useAdmin from "../../../hooks/useAdmin";
+import useCourseCart from "../../../hooks/useCourseCart";
+
 
 const NavBar = () => {
     const { user, logOut } = useContext(AuthContext);
+    const [courseCart] = useCourseCart();
     const [isAdmin] = useAdmin();
-    // const [isNavOpen, setIsNavOpen] = useState(false);
     const [isMobileNavOpen, setMobileNavOpen] = useState(false);
 
     const handleLogOut = () => {
@@ -238,10 +240,10 @@ const NavBar = () => {
             <li className="font-bold"><Link to="/course">COURSES</Link></li>
             <li className="font-bold"><Link to='/about'>ABOUT US</Link></li>
             <li>
-                <Link to='/login'>
+                <Link to={user? '/dashboard/myCourseCart' : '/login'}>
                     <button className=" btn font-bold space-x-4 bg-slate-950">
                        <span className="text-2xl text-yellow-400"><FaCartPlus></FaCartPlus></span> 
-                        <div className="badge badge-secondary text-xl">+0</div>
+                        <div className="badge badge-secondary text-xl">+{courseCart?.length || 0 }</div>
                     </button>
                 </Link>
             </li>
@@ -324,4 +326,5 @@ const NavBar = () => {
 };
 
 export default NavBar;
+
 

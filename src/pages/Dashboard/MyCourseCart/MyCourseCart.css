@@ -1,0 +1,16 @@
+/* MyCourseCart.css */
+.long-text {
+    white-space: nowrap; /* Prevent text from wrapping by default */
+    overflow: hidden; /* Hide overflowing text */
+    text-overflow: ellipsis; /* Add ellipsis (...) for long text */
+  }
+  
+  @media (max-width: 640px) {
+    /* Apply responsive styles for screens smaller than 640px (adjust the breakpoint as needed) */
+    .long-text {
+      white-space: normal; /* Allow text to wrap on small screens */
+      overflow: visible; /* Allow overflowing text to be visible */
+      text-overflow: clip; /* Clip long text instead of adding ellipsis */
+    }
+  }
+  

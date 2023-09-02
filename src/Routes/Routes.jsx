@@ -21,7 +21,7 @@ import AdminRoute from "./AdminRoute";
 import AdminHome from "../pages/Dashboard/UserHome/Admin/AdminHome";
 import DashBAllVideos from "../pages/Dashboard/DashBAllVideos/DashBAllVideos";
 import ResetPassword from "../pages/Login/ResetPassword";
-import AddCourseCart from "../pages/Dashboard/AddCourseCart/AddCourseCart";
+import MyCourseCart from "../pages/Dashboard/MyCourseCart/MyCourseCart";
 
 
 
@@ -81,8 +81,8 @@ import AddCourseCart from "../pages/Dashboard/AddCourseCart/AddCourseCart";
           element: <UserPayment></UserPayment>
         },
         {
-          path: 'addCourseCart',
-          element: <AddCourseCart></AddCourseCart>
+          path: 'myCourseCart',
+          element: <MyCourseCart></MyCourseCart>
         },
         {
           path: 'userReview',

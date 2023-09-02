@@ -48,7 +48,7 @@ const Dashboard = () => {
             </Helmet>
               <li className="text-white text-bold"><Link to='/dashboard/userHome'><FaUser></FaUser>User Home</Link></li>
               <li className="text-white text-bold"><Link to='/dashboard/userPayment'><FaWallet></FaWallet>User Payment Method</Link></li>
-              <li className="text-white text-bold"><Link to='/dashboard/addCourseCart'><FaCartPlus></FaCartPlus>My Course Cart</Link></li>
+              <li className="text-white text-bold"><Link to='/dashboard/myCourseCart'><FaCartPlus></FaCartPlus>My Course Cart</Link></li>
               <li className="text-white text-bold"><Link to='/dashboard/userReview'><FaEnvelopeOpenText></FaEnvelopeOpenText> Reviews</Link></li>
 
             </>
