@@ -65,8 +65,8 @@ const AllUsers = () => {
 
             <h3 className="text-3xl font-semibold overflow-x-auto text-center mb-2 mt-10">Total Users: {users.length}</h3>
 
-            <div className="overflow-x-auto ">
-                <table className="table table-zebra">
+            <div className="table-responsive">
+                <table className="table table-compact">
                     {/* head */}
                     <thead>
                         <tr>
@@ -80,10 +80,10 @@ const AllUsers = () => {
                     <tbody>
                         {
                             users.map((user, index) => (
-                                <tr key={user._id}>
+                                <tr  key={user._id}>
                                     <th>{index + 1}</th>
-                                    <td>{user.name}</td>
-                                    <td>{user.email}</td>
+                                    <td className='long-text' >{user.name}</td>
+                                    <td className='long-text'>{user.email}</td>
                                     <td>
                                         {
                                             user?.role === 'admin' ? 'admin' : (

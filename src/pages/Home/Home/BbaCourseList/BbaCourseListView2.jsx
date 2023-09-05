@@ -126,7 +126,7 @@ const BbaCourseListView2 = ({ item }) => {
 
     useEffect(() => {
         // Check if the user has added the current cart item when the component mounts
-        const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        const cartItems = JSON.parse(localStorage.getItem('courseCart')) || [];
         const courseInCart = cartItems.find(item => item.courseCategory === _id);
         setHasAdded(!!courseInCart);
     }, [_id]);
@@ -155,9 +155,9 @@ const BbaCourseListView2 = ({ item }) => {
                             refetch();
                             setHasAdded(true);
                             // Store the cart item in Local Storage
-                            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+                            const cartItems = JSON.parse(localStorage.getItem('courseCart')) || [];
                             cartItems.push(courseCatItem);
-                            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                            localStorage.setItem('courseCart', JSON.stringify(cartItems));
 
                             Swal.fire({
                                 position: 'top-end',
@@ -186,7 +186,7 @@ const BbaCourseListView2 = ({ item }) => {
     };
 
     return (
-        <div className="flex flex-col md:flex-row bg-gradient-to-r from-cyan-800 to-cyan-900 rounded-3xl p-4 space-y-4 md:space-y-0 md:space-x-4">
+        <div className="flex flex-col md:flex-row bg-gradient-to-r from-cyan-800 to-cyan-950 rounded-3xl p-4 space-y-4 md:space-y-0 md:space-x-4">
             <div className="w-full md:w-1/2 lg:w-1/3">
                 <h3 className="uppercase text-xl md:text-2xl font-bold py-2 px-4 text-green-400">{name}</h3>
                 <p className="text-3xl md:text-4xl font-bold ml-8">৳ {price}</p>

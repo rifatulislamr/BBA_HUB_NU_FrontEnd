@@ -3,6 +3,7 @@ import { FaEnvelopeOpenText, FaUser, FaWallet, FaVideoSlash, FaCartPlus } from "
 import { FaDollarSign, FaHome, FaUsers } from "react-icons/fa";
 import useAdmin from "../hooks/useAdmin";
 import { Helmet } from "react-helmet-async";
+import useCourseCart from "../hooks/useCourseCart";
 
 
 
@@ -11,6 +12,7 @@ const Dashboard = () => {
 
   // const isAdmin = true;
   const [isAdmin] = useAdmin();
+  const [courseCart] = useCourseCart();
 
 
 
@@ -48,7 +50,9 @@ const Dashboard = () => {
             </Helmet>
               <li className="text-white text-bold"><Link to='/dashboard/userHome'><FaUser></FaUser>User Home</Link></li>
               <li className="text-white text-bold"><Link to='/dashboard/userPayment'><FaWallet></FaWallet>User Payment Method</Link></li>
-              <li className="text-white text-bold"><Link to='/dashboard/myCourseCart'><FaCartPlus></FaCartPlus>My Course Cart</Link></li>
+              <li className="text-white text-bold"><Link to='/dashboard/myCourseCart'><FaCartPlus></FaCartPlus>My Course Cart <br />
+              <span className="badge badge-secondary text-[15px]">+{courseCart?.length || 0 }</span>
+              </Link> </li>
               <li className="text-white text-bold"><Link to='/dashboard/userReview'><FaEnvelopeOpenText></FaEnvelopeOpenText> Reviews</Link></li>
 
             </>
