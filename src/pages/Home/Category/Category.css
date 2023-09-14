@@ -1,8 +1,11 @@
-/* Category.css */
+
 
 /* Default styles */
 .text-2xl {
     font-size: 1.5rem; /* Default font size for large screens */
+    color:#ffffff ;
+   
+    
 }
 
 /* Responsive styles for smaller screens (e.g., tablets and mobile devices) */
@@ -15,6 +18,7 @@
 /* Additional media queries for even smaller screens if needed */
 @media screen and (max-width: 480px) {
     .text-2xl {
-        font-size: 1rem; /* Further adjust font size for mobile devices */
+        font-size: 0.8rem; /* Further adjust font size for mobile devices */
+        line-height: 1.1;
     }
 }

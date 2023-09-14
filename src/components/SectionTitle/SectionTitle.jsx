@@ -1,4 +1,4 @@
-
+import './SectionTitle.css'
 
 const SectionTitle = ({ heading, subHeading }) => {
     return (

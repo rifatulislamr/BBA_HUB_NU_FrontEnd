@@ -180,6 +180,7 @@ const AllVideos = () => {
     <div>
       <SectionTitle heading='All videos'></SectionTitle>
       <div className="grid md:grid-cols-3 gap-10">
+      
         {
           userInfo.courses && userInfo.courses.length === 0 ? (
             <div>

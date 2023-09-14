@@ -31,32 +31,32 @@ const Category = () => {
             >
                 <SwiperSlide>
                     <img src={slide1} alt="" />
-                    <h3 className="text-2xl uppercase text-center -mt-2 text-green-400 backdrop-blur-md	">COMPUTER AND INFORMATION TECHNOLOGY</h3>
+                    <h3 className="text-2xl  text-center -mt-2  backdrop-blur-xl">Computer  & Information Technology</h3>
                 </SwiperSlide>
                 
                 <SwiperSlide>
                     <img src={slide2} alt="" />
-                    <h3 className="text-2xl uppercase text-center -mt-2  text-green-400 backdrop-blur-md  ">BUSINESS STATISTICS</h3>
+                    <h3 className="text-2xl  text-center -mt-2   backdrop-blur-xl  ">Business  Statistics</h3>
                 </SwiperSlide>
                 <SwiperSlide>
                     <img src={slide3} alt="" />
-                    <h3 className="text-2xl uppercase text-center -mt-2  text-green-400 backdrop-blur-md  ">MICRO ECONOMICS</h3>
+                    <h3 className="text-2xl  text-center -mt-2   backdrop-blur-xl  ">Micro Economics</h3>
                 </SwiperSlide>
                 <SwiperSlide>
                     <img src={slide4} alt="" />
-                    <h3 className="text-2xl uppercase text-center -mt-2  text-green-400 backdrop-blur-md  ">BUSINESS COMMUNICATION</h3>
+                    <h3 className="text-2xl  text-center -mt-2   backdrop-blur-xl  ">Business Communication</h3>
                 </SwiperSlide>
                 <SwiperSlide>
                     <img src={slide5} alt="" />
-                    <h3 className="text-2xl uppercase text-center -mt-2  text-green-400 backdrop-blur-md  ">TAXATION IN BANGLADESH</h3>
+                    <h3 className="text-2xl  text-center -mt-2   backdrop-blur-xl  ">Taxation in Bangladesh</h3>
                 </SwiperSlide>
                 <SwiperSlide>
                     <img src={slide5} alt="" />
-                    <h3 className="text-2xl uppercase text-center -mt-2  text-green-400 backdrop-blur-md  ">BUSINESS MATHEMATICS</h3>
+                    <h3 className="text-2xl  text-center -mt-2   backdrop-blur-xl  ">Business Mathematics</h3>
                 </SwiperSlide>
                 <SwiperSlide>
                     <img src={slide5} alt="" />
-                    <h3 className="text-2xl uppercase text-center -mt-2  text-green-400 backdrop-blur-md  ">INTERMEDIATE ACCOUNTING</h3>
+                    <h3 className="text-2xl  text-center -mt-2   backdrop-blur-xl  ">Intermediate Accounting</h3>
                 </SwiperSlide>
             </Swiper>
         </section>

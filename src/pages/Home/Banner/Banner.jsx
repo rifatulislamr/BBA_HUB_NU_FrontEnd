@@ -8,6 +8,7 @@ import img3 from '../../../assets/home/banners/course-01.jpg';
 import img4 from '../../../assets/home/banners/course-02.jpg';
 import './Banner.css'
 
+
 const Banner = () => {
     return (
         <Carousel

@@ -8,8 +8,8 @@ const CardWithImageAndDescription = ({ image, title, description }) => {
         <img className='w-full h-60 rounded-lg' src={image} alt=""/>
       </figure>
       <div className="card-body">
-        <p className='text-lg text-center text-white uppercase'>{title}</p>
-        <h2 className="text-center text-red-200 text-sm uppercase">{description}</h2>
+        <p className='text-lg text-center text-white text-lg uppercase'>{title}</p>
+        <h2 className="text-center text-red-200 text-sm space-x-0 ">{description}</h2>
       </div>
     </div>
   );
@@ -18,22 +18,22 @@ const CardWithImageAndDescription = ({ image, title, description }) => {
 const TPanel = () => {
   const [cards, setCards] = useState([
     {
-      image: 'https://scontent.fcgp3-2.fna.fbcdn.net/v/t39.30808-6/319234940_3306726226246680_1313282970014797787_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=174925&_nc_eui2=AeF7cUKOnnTQOknORwwcEuzwuVzvfX9dt0i5XO99f123SILlGFV6p7aP_FwhAhO30iT8ApPafTI0RZ_WJ3gc8eL4&_nc_ohc=u3s6FmSpHEMAX8FDRz8&_nc_ht=scontent.fcgp3-2.fna&oh=00_AfBiagfLCOigCKuUHAxyZdG-7ZOlCIEEFz6K_2MItJi3Qw&oe=64E94EB1',
+      image: 'https://i.postimg.cc/L6YdjD1W/riad.jpg',
       title: 'Rifatul Islam',
       description: 'chip engineer of BBA HUB',
     },
     {
-      image: 'https://scontent.fcgp3-2.fna.fbcdn.net/v/t39.30808-6/246230591_567178431038106_7679508755306843248_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeEr0BIzi4_Culbhzm-uhonwz1KUZOEr_s_PUpRk4Sv-z3FISJdiXAlNK1QUoYDjozQSO65gQ3PDrGsZwy_az42Q&_nc_ohc=dBNdEaXTcDwAX8L5gJi&_nc_ht=scontent.fcgp3-2.fna&oh=00_AfBQz_YV4zvu9_HbzVAGhcTjzM0l37N5qkojcGQ_-zj-BA&oe=64E9DDC9',
+      image: 'https://i.postimg.cc/yNmdTBwk/jahid.jpg',
       title: 'Zahid hasan Munna',
       description: 'finance accounters of bba hub.',
     },
     {
-      image: 'https://via.placeholder.com/150x150',
+      image: 'https://i.postimg.cc/LsfQz7Ws/sajjadsir.jpg',
       title: 'sajjadul hoque',
       description: 'managing director of BBA HUB.',
     },
     {
-      image: 'https://via.placeholder.com/150x150',
+      image: 'https://i.postimg.cc/Zq0DhKxM/361249579-814383556843387-6878866451807518584-n.jpg',
       title: 'Riben dhar',
       description: 'Photographer and video editor.',
     },

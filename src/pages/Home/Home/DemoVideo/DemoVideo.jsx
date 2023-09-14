@@ -1,5 +1,6 @@
 import React from 'react';
 import SectionTitle from '../../../../components/SectionTitle/SectionTitle';
+import './DemoVideo.css'
 
 const DemoVideo = () => {
     return (

@@ -1,0 +1,19 @@
+/* Default font size for small screens (sm) */
+.text-center {
+    font-size: 1rem; /* Adjust the font size as needed */
+}
+
+/* Font size for medium screens (md) */
+@media (min-width: 640px) {
+    .text-center {
+        font-size: 1.25rem; /* Adjust the font size as needed */
+    }
+}
+
+/* Font size for large screens (lg) */
+@media (min-width: 1024px) {
+    .text-center {
+        font-size: 1.5rem; /* Adjust the font size as needed */
+        
+    }
+}

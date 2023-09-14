@@ -28,7 +28,7 @@ export const SignUp = () => {
           .then(() => {
             // console.log('user profile info updated')
 
-            const saveUser = { name: data.name, email: data.email,courses:[] }
+            const saveUser = { name: data.name, email: data.email,courses:["Business_Statistics","Computer_and_Information_Technology"] }
 
             fetch('http://localhost:5000/users', {
               method: 'POST',

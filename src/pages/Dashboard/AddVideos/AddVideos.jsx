@@ -71,13 +71,13 @@ useEffect(()=> {
                         onChange={(e) => setCategory(e.target.value)}
                     >
                         <option disabled value="">Pick one</option>
-                        <option value="cait">COMPUTER AND INFORMATION TECHNOLOGY</option>
-                        <option value="bs">BUSINESS STATISTICS</option>
-                        <option value="me">MICRO ECONOMICS</option>
-                        <option value="bc">BUSINESS COMMUNICATION</option>
-                        <option value="tib">TAXATION IN BANGLADESH</option>
-                        <option value="bm">BUSINESS MATHEMATICS</option>
-                        <option value="ia">INTERMEDIATE ACCOUNTING</option>
+                        <option value="Computer_and_Information_Technology">Computer and Information Technology</option>
+                        <option value="Business_Statistics">Business Statistics</option>
+                        <option value="Micro_Economics">Micro Economics</option>
+                        <option value="Business_Communication">Business Communication</option>
+                        <option value="Taxation_in_Bangladesh">Taxation in Bangladesh</option>
+                        <option value="Business_Mathematics">Business Mathematics</option>
+                        <option value="Intermediate_Accounting">Intermediate Accounting</option>
 
                     </select>
                 </div>

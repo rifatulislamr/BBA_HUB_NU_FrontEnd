@@ -5,6 +5,7 @@ import { FaTrashAlt, FaUserShield } from "react-icons/fa"; // Corrected import s
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 import './AllUsers.css';
+import { FaCcPaypal, FaPaypal } from 'react-icons/fa6';
 
 const AllUsers = () => {
     const [axiosSecure] = useAxiosSecure();
@@ -36,6 +37,29 @@ const AllUsers = () => {
             });
     }
 
+    // handler user payment
+    const handlePayment = user => {
+        axiosSecure.patch(`/users/payment/${user._id}`)
+            .then(res => res.data)
+            .then(data => {
+                console.log(data);
+                if (data.modifiedCount) {
+                    refetch();
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: `${user.name}'s  payment is  successfull!`,
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                }
+            })
+            .catch(err => {
+                console.log(err);
+                alert("Error happened");
+            });
+    }
+
     const handleDelete = user => {
         axiosSecure.delete(`/users/${user._id}`)
             .then(res => res.data)
@@ -56,7 +80,7 @@ const AllUsers = () => {
                 console.log(err);
                 alert("Error happened");
             });
-        }
+    }
     return (
         <div>
             <Helmet>
@@ -73,6 +97,8 @@ const AllUsers = () => {
                             <th>#</th>
                             <th>Name</th>
                             <th>Email</th>
+                            <th>Payment</th>
+                            <th>T.id</th>
                             <th>Role</th>
                             <th>Action</th>
                         </tr>
@@ -80,15 +106,22 @@ const AllUsers = () => {
                     <tbody>
                         {
                             users.map((user, index) => (
-                                <tr  key={user._id}>
+                                <tr key={user._id}>
                                     <th>{index + 1}</th>
                                     <td className='long-text' >{user.name}</td>
                                     <td className='long-text'>{user.email}</td>
+                                    <td className='long-text'>{user?.isPaid === true ? <span className='text-white bg-green-600 p-2 rounded-lg'>Paid</span> : (
+                                        <button onClick={() => handlePayment(user)} className="btn btn-ghost bg-orange-600 text-white">
+                                           UnPaid<FaPaypal />
+                                        </button>
+                                    )}</td>
+                                    <td className='long-text'>{user?.t_id ? user.t_id: 'NO T.ID'}</td>
+
                                     <td>
                                         {
-                                            user?.role === 'admin' ? 'admin' : (
+                                            user?.role === 'admin' ? <span className='text-white bg-green-900 p-2 rounded-lg'>Admin</span> : (
                                                 <button onClick={() => handleMakeAdmin(user)} className="btn btn-ghost bg-orange-600 text-white">
-                                                    <FaUserShield />
+                                                 <FaUserShield />
                                                 </button>
                                             )
                                         }

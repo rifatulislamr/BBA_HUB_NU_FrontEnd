@@ -256,11 +256,12 @@ const NavBar = () => {
                             <FaUser className="text-green-300"></FaUser>Profile
                         </label>
                         <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 ">
-                            <li className="font-bold uppercase text-white-600">
+                            <li className="font-bold uppercase text-white-600 italic">
                                 <Link to={isAdmin ? '/dashboard/adminHome' : '/dashboard/userHome'}>
                                     <span>{user?.displayName}</span>
                                 </Link>
                             </li>
+                            
                             <li>
                                 <button onClick={handleLogOut} className="mt-2 px-4 rounded-3xl text-white border-2 border-sky-500 btn-ghost bg-red-600">
                                     LogOut
