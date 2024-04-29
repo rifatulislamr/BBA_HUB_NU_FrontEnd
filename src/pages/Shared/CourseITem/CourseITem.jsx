@@ -8,7 +8,7 @@ import useCourseCart from "../../../hooks/useCourseCart";
 const CourseITem = ({ item }) => {
     const { user } = useContext(AuthContext);
     const [, refetch] = useCourseCart();
-    const { name, price,_id } = item;
+    const { name, price,_id,category } = item;
     const navigate = useNavigate();
     const location = useLocation();
     const [hasAdded, setHasAdded] = useState (false);
@@ -16,7 +16,7 @@ const CourseITem = ({ item }) => {
     useEffect(() => {
         // Check if the user has added the current cart item when the component mounts
         const cartItems = JSON.parse(localStorage.getItem('courseCart')) || [];
-        const courseInCart = cartItems.find(item => item.courseCategory === _id);
+        const courseInCart = cartItems.find(item => item.course_id === _id);
         setHasAdded(!!courseInCart);
     }, [_id]);
 
@@ -30,7 +30,7 @@ const CourseITem = ({ item }) => {
                     text: 'Please Choose Another Course.',
                 });
             } else {
-                const courseCatItem = { courseCategory: _id, name, price, email: user.email };
+                const courseCatItem = { course_id: _id,category, name, price, email: user.email };
                 fetch('http://localhost:5000/carts', {
                     method: 'POST',
                     headers: {

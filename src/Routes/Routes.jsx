@@ -40,11 +40,11 @@ import MyCourseCart from "../pages/Dashboard/MyCourseCart/MyCourseCart";
           path: 'course',
           element: <Course></Course>
         },
-        {
-          path: 'service',
-          element: <Service></Service>
+        // {
+        //   path: 'service',
+        //   element: <Service></Service>
 
-        },
+        // },
         {
           path: 'about',
           element: <About></About>
@@ -63,7 +63,7 @@ import MyCourseCart from "../pages/Dashboard/MyCourseCart/MyCourseCart";
         },
         {
           path: 'secret',
-          element: <PrivateRoute><Secret></Secret></PrivateRoute>
+        element: <PrivateRoute><Secret></Secret></PrivateRoute>
         }
       ]
     },

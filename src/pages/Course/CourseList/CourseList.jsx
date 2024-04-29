@@ -1,15 +1,15 @@
 import CourseITem from '../../Shared/CourseITem/CourseITem';
 
-const CourseList = ({items}) => {
+const CourseList = ({ items }) => {
     return (
         <div>
-             <div className="grid md:grid-cols-2 gap-10">
+            <div className="grid md:grid-cols-2  gap-10">
                 {
-                    
+
                     items.map(item => <CourseITem
                         key={item._id}
                         item={item}
-                    
+
                     >
 
                     </CourseITem>)

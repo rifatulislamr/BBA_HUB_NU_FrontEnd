@@ -55,6 +55,7 @@ const DashBAllVideos = () => {
                     <tr>
                         <th>#</th>
                         <th>Category</th>
+                        <th>Course Name</th>
                         <th>Video Name</th>
                         <th>Video</th>
                         <th>Delete</th>
@@ -65,6 +66,7 @@ const DashBAllVideos = () => {
                         <tr key={index}>
                             <td>{index + 1}</td>
                             <td>{files.category}</td>
+                            <td>{files.courseName}</td>
                             <td>{files.name}</td>
                             <td>
                                 {files.videos.map((file, innerIndex) => (

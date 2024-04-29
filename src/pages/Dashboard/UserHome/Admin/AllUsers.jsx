@@ -50,7 +50,7 @@ const AllUsers = () => {
                         icon: 'success',
                         title: `${user.name}'s  payment is  successfull!`,
                         showConfirmButton: false,
-                        timer: 1500
+                        timer: 1000
                     });
                 }
             })
@@ -82,7 +82,8 @@ const AllUsers = () => {
             });
     }
     return (
-        <div>
+        <>
+        <div >
             <Helmet>
                 <title>BBA HUB | All users </title>
             </Helmet>
@@ -138,6 +139,7 @@ const AllUsers = () => {
                 </table>
             </div>
         </div>
+        </>
     );
 };
 

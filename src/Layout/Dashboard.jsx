@@ -58,7 +58,7 @@ const Dashboard = () => {
             </>
           }
 
-          <div className="divider"></div>
+          <div className="divider "></div>
 
 
 

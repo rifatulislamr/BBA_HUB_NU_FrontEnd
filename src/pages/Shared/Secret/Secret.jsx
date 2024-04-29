@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet-async";
-import Testimonials from "../../Home/Testimonials/Testimonials";
+// import Testimonials from "../../Home/Testimonials/Testimonials";
 import { useEffect } from "react";
 import CoverPageShare from "../CoverPageShare/CoverPageShare";
 import allClassImg from '../../../assets/menu/banner3.jpg'
@@ -21,7 +21,7 @@ const Secret = () => {
             </Helmet>
             <CoverPageShare img={allClassImg} title= "All Classes" ></CoverPageShare>
             <AllVideos></AllVideos>
-            <Testimonials></Testimonials>
+            {/* <Testimonials></Testimonials> */}
         </>
 
     );

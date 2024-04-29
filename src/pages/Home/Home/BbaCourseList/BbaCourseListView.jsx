@@ -47,11 +47,12 @@ import { AuthContext } from "../../../../providers/AuthProvider";
 import { useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import useCourseCart from "../../../../hooks/useCourseCart";
+import CourseITem from "../../../Shared/CourseITem/CourseITem";
 
 const BbaCourseListView = ({ item }) => {
     const { user } = useContext(AuthContext);
-    const [,refetch] = useCourseCart();
-    const { name, price, _id } = item;
+    const [, refetch] = useCourseCart();
+    const { name, price, _id, category } = item;
     const navigate = useNavigate();
     const location = useLocation();
     const [hasAdded, setHasAdded] = useState(false);
@@ -59,12 +60,12 @@ const BbaCourseListView = ({ item }) => {
     useEffect(() => {
         // Check if the user has added the current cart item when the component mounts
         const cartItems = JSON.parse(localStorage.getItem('courseCart')) || [];
-        const courseInCart = cartItems.find(item => item.courseCategory === _id);
+        const courseInCart = cartItems.find(item => item.course_id === _id);
         setHasAdded(!!courseInCart);
     }, [_id]);
 
     const handleAddToVideoCart = item => {
-        console.log(item);
+
         if (user && user.email) {
             if (hasAdded) {
                 refetch();
@@ -74,7 +75,8 @@ const BbaCourseListView = ({ item }) => {
                     text: 'Please Choose Another Course.',
                 });
             } else {
-                const courseCatItem = { courseCategory: _id, name, price, email: user.email };
+                const courseCatItem = { course_id: _id, category, name, price, email: user.email };
+                console.log(CourseITem)
                 fetch('http://localhost:5000/carts', {
                     method: 'POST',
                     headers: {
@@ -86,13 +88,13 @@ const BbaCourseListView = ({ item }) => {
                     .then(data => {
                         if (data.insertedId) {
                             refetch(); //  refetch cart to update the number of items in the course cart
-                            
+
                             setHasAdded(true);
                             // Store the cart item in Local Storage
                             const cartItems = JSON.parse(localStorage.getItem('courseCart')) || [];
                             cartItems.push(courseCatItem);
                             localStorage.setItem('courseCart', JSON.stringify(cartItems));
-                           
+
                             Swal.fire({
                                 position: 'top-end',
                                 icon: 'success',

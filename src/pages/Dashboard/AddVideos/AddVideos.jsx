@@ -10,7 +10,8 @@ const AddVideos = () => {
     const [userEmail,setUserEmail] = useState({});
     const [name, setName] = useState("");
     const [videos, setVideos] = useState([]);
-    const [category, setCategory] = useState("");
+    const [courseName, setCourseName] = useState("");
+    const [category,setCategory] = useState("");
 
 useEffect(()=> {
     setUserEmail(user.email);
@@ -27,6 +28,7 @@ useEffect(()=> {
         }
         console.log(userEmail);
         formData.append("name", name);
+        formData.append("courseName", courseName);
         formData.append("category", category);
         formData.append("user",userEmail);
 
@@ -53,7 +55,7 @@ useEffect(()=> {
         <div className="w-full px-10">
             <SectionTitle heading="Add Video"></SectionTitle>
             <form onSubmit={handleSubmit}>
-                <div className="form-control w-full max-w-xs">
+                <div className="form-control w-full max-w-xs mb-5">
                     <label className="label">
                         <span className="label-text font-semibold">Video Name</span>
 
@@ -61,9 +63,29 @@ useEffect(()=> {
                     <input type="text" name='name' id='name' onChange={(e) => setName(e.target.value)} className="input input-bordered w-full max-w-xs" />
 
                 </div>
-                <div className="form-control w-full max-w-xs mb-36">
+                <div className="form-control w-full max-w-xs mb-5">
                     <label className="label">
-                        <span className="label-text">Category*</span>
+                        <span className="label-text">Course Name</span>
+                    </label>
+                    <select
+                        className="select select-bordered bg"
+                        value={courseName}
+                        onChange={(e) => setCourseName(e.target.value)}
+                    >
+                        <option disabled value="">Pick one</option>
+                        <option value="Computer and Information Technology">Computer and Information Technology</option>
+                        <option value="Business Statistics">Business Statistics</option>
+                        <option value="Micro Economics">Micro Economics</option>
+                        <option value="Business Communication">Business Communication</option>
+                        <option value="Taxation in Bangladesh">Taxation in Bangladesh</option>
+                        <option value="Business Mathematics">Business Mathematics</option>
+                        <option value="Intermediate Accounting">Intermediate Accounting</option>
+
+                    </select>
+                </div>
+                <div className="form-control w-full max-w-xs mb-5">
+                    <label className="label">
+                        <span className="label-text">Category</span>
                     </label>
                     <select
                         className="select select-bordered bg"
@@ -71,14 +93,8 @@ useEffect(()=> {
                         onChange={(e) => setCategory(e.target.value)}
                     >
                         <option disabled value="">Pick one</option>
-                        <option value="Computer_and_Information_Technology">Computer and Information Technology</option>
-                        <option value="Business_Statistics">Business Statistics</option>
-                        <option value="Micro_Economics">Micro Economics</option>
-                        <option value="Business_Communication">Business Communication</option>
-                        <option value="Taxation_in_Bangladesh">Taxation in Bangladesh</option>
-                        <option value="Business_Mathematics">Business Mathematics</option>
-                        <option value="Intermediate_Accounting">Intermediate Accounting</option>
-
+                        <option value="firstYearBba">First Year BBA</option>
+                        <option value="secondYearBba">Second Year BBA</option>
                     </select>
                 </div>
 

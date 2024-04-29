@@ -92,7 +92,7 @@ export const SignUp = () => {
             <p className="text-lg font-bold mt-4">Welcome back! Let's take you to your account</p>
             
           </div>
-          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 shadow-cyan-500/50">
             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
               <div className="form-control">
                 <label className="label">
